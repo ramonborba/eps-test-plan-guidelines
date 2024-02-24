@@ -1,0 +1,226 @@
+%
+% introduction.tex
+%
+% Copyright (C) 2024 by SpaceLab.
+%
+% EPS Test Plan Guidelines
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+% International License. To view a copy of this license,
+% visit http://creativecommons.org/licenses/by-sa/4.0/.
+%
+
+%
+% \brief Baseline Test Matrix chapter.
+%
+% \author Ramon de Araujo Borba <ramonborba97@gmail.com>
+%
+% \version 0.1.0
+%
+% \date 2024/02/14
+%
+
+\chapter{Baseline Test Matrix} \label{ch:baseline-matrix}
+
+
+The test matrix is where all the selected test for the test plan are presented and organized, it should contain or reference all the relevant information regarding each test.
+
+Regarding the test program, the test matrix, presented in \autoref{tab:baseline-test-matrix} is proposed as a baseline.
+It is intended to be applicable to different EPS architectures and cover most of the necessary tests.
+When writing a specific test plan, the relevant test activities applicable to the architecture as well as to the requirements of the EPS being tested should be selected.
+Also, any additional tests, specific to a given architecture, not covered in the baseline matrix, may be added as necessary.
+
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{clll}
+        \toprule
+        \textbf{Test Block} & \textbf{Test Activity} \\
+        \midrule
+        \midrule
+        \multirow{4}{*}{Inspection}     & Manufacturing Inspection              \\
+                                        & Electrical Inspection                 \\
+                                        & Mechanical Inspection                 \\
+                                        & Integration Inspection                \\
+        \midrule
+        \multirow{7}{*}{Functional}     & Harvesting System                     \\
+                                        & Output Channels Regulators            \\
+                                        & Battery Management                    \\
+                                        & Output Channels Control               \\
+                                        & Protection Circuits                   \\
+                                        & Sensor Readings                       \\
+                                        & Communication Buses                   \\
+        \midrule
+        \multirow{5}{*}{Performance}    & Module Power Consumption              \\
+                                        & Harvesting Regulator Efficiency       \\
+                                        & Output Channels Regulators Efficiency \\
+                                        & Battery Charging Regulator Efficiency \\
+                                        & Overall/System Efficiency             \\
+        \midrule
+        Mission                         & Mission Cases                         \\
+        \midrule
+        \multirow{4}{*}{Environmental}  & Vibration                             \\
+                                        & Thermal Vacuum                        \\
+                                        & Thermal Cycling                       \\
+                                        & Bake-out                              \\
+        \bottomrule
+    \end{tabular}
+    \caption{Baseline test matrix}
+    \label{tab:baseline-test-matrix}
+\end{table}
+
+
+The baseline test matrix is organized in four test blocks: inspection, functional, performance and environmental.
+Each block is composed of related test activities, and each activity is composed of one or more individual tests.
+Each individual test should referenced to its specifications, procedures, model used and requirement being verified.
+
+At individual test level, the dependencies on the specifics of each EPS architecture and implementation are greatly increased, so proposing individual tests at this moment is unfeasible considering this matrix, and the entire guidelines document, is intended to be adaptable to different topologies and architectures.
+
+In the specific test plan, this matrix would need additional columns to include all the necessary information, and, for better organization, may be divided into multiple tables, as long as the tests are properly referenced.
+
+In the next sections, a description of each block and activity will be presented.
+
+
+
+\section{Inspection}
+
+The Inspection test block has the objective of verifying the integrity of the manufacturing process and conformance of the physical model with the design files, ensuring there are no workmanship defects or flaws in the model.
+
+This block is composed of the following activities:
+
+\begin{itemize}
+    \item Manufacturing Inspection:
+    \begin{itemize}
+        \item has the purpose of verifying the integrity of the manufacturing and transportation processes;
+        \item consists of visual inspection of the packaging conditions and conformance to the fabrication standards requirements;
+    \end{itemize}
+
+    \item Electrical Inspection:
+    \begin{itemize}
+        \item has the purpose of verifying the electrical integrity of the module;
+        \item consists of verifying conformance with the electrical schematics, checking solder quality and integrity, checking for absence of short circuits and performing first power up of the module;
+    \end{itemize}
+
+    \item Mechanical Inspection:
+    \begin{itemize}
+        \item has the purpose of verifying the physical properties of the board in relation to the design files;
+        \item consists of  measurements of board dimensions, mass, size and position of mounting holes;
+    \end{itemize}
+
+    \item Integration Inspection:
+    \begin{itemize}
+        \item has the purpose of verifying that the module can be physically integrated with the satellite;
+        \item consists of checking the connectors pinout and positioning in relation to the design files.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+\section{Functional}
+
+The Functional test block has the objective of verifying that the module is capable of executing all of its required functions according to its designed specifications.
+
+This block is composed of the following activities:
+
+\begin{itemize}
+    \item Harvesting System:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the module's harvesting system
+        \item consists of testing the relevant power converters as well as associated MPPT systems and algorithms;
+    \end{itemize}
+
+    \item Output Channel Regulators:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the output channels regulators;
+        \item consists of applying varying loads to the voltage regulators, according to the expected limits during mission operation;
+    \end{itemize}
+
+    \item Battery Management:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation end functioning of the battery management system;
+        \item consists of testing the associated regulators, verifying the operation of the monitoring systems, testing of the heating systems and associated algorithms;
+    \end{itemize}
+
+    \item Output Channels Control:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the output channels control system;
+        \item consists of testing the operation of the channel's power switches and correct functioning of regulator's enable pins;
+    \end{itemize}
+
+    \item Protection Circuits:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the modules protection circuits;
+        \item consists of the current limiting capabilities of power switches, integrated protections of regulators, batteries charging and discharging protections and associated algorithms;
+    \end{itemize}
+
+    \item Sensor Readings:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the sensors and the correctness of the readings;
+        \item consists of testing and comparison of the module's sensor readings against external measurement instruments;
+    \end{itemize}
+
+    \item Communication Buses:
+    \begin{itemize}
+        \item has the purpose of verifying the correct operation and functioning of the communication buses and integrity of information;
+        \item consists of checking the communication buses' configuration and protocols, verifying the integrity of the messages, including both external (for other modules) and internal (for peripherals) communication buses.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+
+\section{Performance}
+
+The Performance test block has the objective of verifying and evaluating the performance aspects of the module in relation to its requirements.
+The main focus of this block, considering and EPS module, is on evaluating the efficiency of the multiple conversion stages present in the module, as well as of the module as a hole.
+This usually consists of applying varying loads to the regulators and measuring input and output power consumptions in order to calculate the efficiency, resulting in an efficiency curve, providing data for different points of operation.
+
+This test block is composed of the following activities:
+
+\begin{itemize}
+    \item Module Power Consumption:
+    \begin{itemize}
+        \item has the purpose of evaluating the power consumption of the isolated module, in normal operating conditions, with no loads connected;
+    \end{itemize}
+
+    \item Harvesting System Efficiency:
+    \begin{itemize}
+        \item has the purpose of evaluating the efficiency of the converters associated with the harvesting system;
+    \end{itemize}
+
+    \item Output Regulators Efficiency:
+    \begin{itemize}
+        \item has the purpose of evaluating the efficiency of the converters associated with the output channels;
+    \end{itemize}
+
+    \item Battery Charge Regulators Efficiency:
+    \begin{itemize}
+        \item has the purpose of evaluating the efficiency of the converters associated with the batteries;
+    \end{itemize}
+
+    \item System Efficiency:
+    \begin{itemize}
+        \item has the purpose of evaluating the efficiency of the system as a hole, considering all conversion stages;
+    \end{itemize}
+
+\end{itemize}
+
+
+
+\section{Mission}
+
+The Mission test block has the objective of verifying the correct operation of the module in relation to the mission concept of operations.
+The activities of this block will involve simulations of expected scenarios during mission operation, considering what is feasible to simulate on ground.
+These may include, for example, system initialization, payload activation schedule, eclipse situations and other relevant scenarios.
+It is also included simulations of contingency situations, and time critical scenarios.
+Due to the nature of this block, the test activities will be highly dependent on the specifics of each mission, and so no specific activities or scenarios are proposed at this moment.
+
+
+\section{Environmental}
+
+The Environmental test block has the objective of verifying that the module is capable of surviving and operating on the conditions of the environment it is exposed to.
+
+The activities involve vibration tests, which relates to the launch conditions, and thermal vacuum, thermal cycling and bake-out tests, which relate to the space and orbit conditions;
+Specific details for these tests, including test levels and durations, are defined directly in the ECSS-E-ST-10-03 standard \cite{ecss-e-st-10-03}. The requirements of the launch provider, when known, must also be taken into account and take precedence over the standards.

@@ -1,0 +1,86 @@
+%
+% introduction.tex
+%
+% Copyright (C) 2024 by SpaceLab.
+%
+% EPS Test Plan Guidelines
+%
+% This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+% International License. To view a copy of this license,
+% visit http://creativecommons.org/licenses/by-sa/4.0/.
+%
+
+%
+% \brief Documentation chapter.
+%
+% \author Ramon de Araujo Borba <ramonborba97@gmail.com>
+%
+% \version 0.1.0
+%
+% \date 2024/02/14
+%
+
+\chapter{Documentation} \label{ch:documentation}
+
+Regarding the documentation associated with testing, the standards define four types of documents: AIT (Assembly, Integration and Test) Plan, Test Specification, Test Procedure and Test Report.
+The expected content for each of these documents are defined in the appendices of the ECSS-E-ST-10-02 \cite{ecss-e-st-10-02} and ECSS-E-ST-10-03 \cite{ecss-e-st-10-03} documents.
+A description of the main purpose of these documents, as defined in the standards, is presented in the following paragraphs.
+
+The AIT Plan document, which may also be named Test Plan, describes the entire testing process, linking each test with the requirement it verifies.
+It contains a planning and description of test activities, description of the selected models, test matrices linking tests with the corresponding test specification, procedure, report and model to be used, description of required equipment and facilities, documentation to be produced and schedule.
+
+The Test Specification document describes the detailed specifications and requirements for the test.
+It contains a description of the purpose of the test, test approach, the item under test, the requirements being verified, required equipment, instrumentation and uncertainties, test conditions and tolerances, pass/fail criteria, related documentation and schedule.
+
+The Test Procedure document describes the detailed procedures for execution of the test.
+It contains the objective of the test, reference to corresponding TSPE document, description of the item under test configuration, required equipment and detailed step-by-step instructions for the test execution.
+
+The Test Report document describes the execution of the test, the test results, data analysis and assessments, as well as considerations and conclusions regarding the requirements being verified.
+
+Regarding the applicability of this documentation structure, it is worth reminding that these definitions are meant to encompass testing for large sized satellites and large scale missions, and that, by following this structure, a great quantity documents would be generated, especially test specifications and procedures documents, considering at least one of each for each and every test.
+
+In CubeSat missions, with simpler designs and simpler tests when compared to large sized satellites, where lower cost and rapid development are a focus, and especially considering that this is currently being applied to a single module, it is proposed for these documents to be combined and adapted to the documentation style of each project.
+
+
+
+\section{Test Plan Structure} \label{sec:test-plan-structure}
+
+
+As the purpose of this document is to provide guidance regarding the elaboration of test plans, based on the ECSS standards definitions, the following structure for the Test Plan document is proposed as a stating point:
+
+
+\begin{itemize}
+    \item Introduction:
+    \begin{itemize}
+        \item containing a description of the main objective, purpose and content of the document;
+    \end{itemize}
+
+    \item Product presentation:
+    \begin{itemize}
+        \item containing a description of the selected models for testing and their built status;
+    \end{itemize}
+
+    \item Test program:
+    \begin{itemize}
+        \item containing the main test matrix, linking each test with the corresponding specification, procedures, physical model used and reference to the requirements they verify;
+        \item description of each test block and test activity;
+        \item test flow and sequencing when necessary;
+    \end{itemize}
+
+    \item Test facilities:
+    \begin{itemize}
+        \item containing a description of the test facilities to be used, or requirements for selecting a test facility;
+    \end{itemize}
+
+    \item Documentation:
+    \begin{itemize}
+        \item containing a description of the documents to be produced;
+    \end{itemize}
+
+    \item Schedule:
+    \begin{itemize}
+        \item when test are to be executed in a specific time frame;
+        \item a schedule may not be needed for test plans meant to be recurrent.
+    \end{itemize}
+
+\end{itemize}
